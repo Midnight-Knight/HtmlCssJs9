@@ -83,7 +83,7 @@ header
 {
     width: 100%;
     height: 10vmin;
-    background-color: rgb(238, 239, 241);
+    background-color: rgb(229, 229, 229); /* rgb(238, 239, 241) */
     position: fixed;
     top: 0;
     display: flex;
@@ -92,18 +92,6 @@ header
     align-items: center;
     flex-wrap: wrap;
     z-index: 10;
-}
-
-footer
-{
-    width: 100%;
-    height: 10vh;
-    background-color: rgb(52, 84, 122);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
 }
 
 header > a
@@ -157,7 +145,7 @@ nav > a
     width: 7vw;
     height: 5vh;
     margin-left: 1.5vw;
-    border: 0.2vmin solid rgb(238, 239, 241);
+    border: 0.2vmin solid rgb(229, 229, 229);
     transition: 1s;
     color: black;
     text-decoration: none;
@@ -208,7 +196,7 @@ section
 #home
 {
     padding-top: 15vmin;
-    background: rgb(238, 239, 241);
+    background: rgb(229, 229, 229);
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -267,7 +255,7 @@ section
 #section-1
 {
     height: 40vh;
-    background: rgb(229, 229, 229);
+    background: rgb(238, 239, 241); /* rgb(229, 229, 229) */
 }
 
 #section-1 > div
@@ -336,11 +324,19 @@ section
 #section-3
 {
     height: 50vh;
-    background: rgb(229, 229, 229);
+    background: rgb(238, 239, 241);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+@media all and (orientation:portrait)
+{
+    #section-3
+    {
+        height: 40vh;
+    }
 }
 
 #section-3 > div, #section-3 > div > img 
@@ -396,14 +392,27 @@ section
 #section-4
 {
     height: 80vh;
-    background: rgb(238, 239, 241);
+    background: rgb(229, 229, 229);
+}
+
+#section-4 > div > p
+{
+    text-align: center;
+    width: 35vw;
+    margin: 4vh 0;
 }
 
 @media all and (orientation:portrait)
 {
     #section-4
     {
-        height: 45vh;
+        height: 35vh;
+    }
+
+    #section-4 > div > p
+    {
+        margin: 1.5vh 0;
+        width: 45vw;
     }
 }
 
@@ -413,13 +422,6 @@ section
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#section-4 > div > p
-{
-    text-align: center;
-    width: 35vw;
-    margin: 4vh 0;
 }
 
 #section-4 > div > iframe
@@ -436,30 +438,26 @@ section
     width: 100%;
     background: rgb(238, 239, 241);
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(2, 25vw);
-    grid-template-areas: "paper laptop paper laptop"
-    "laptop paper laptop paper";
+    grid-template: repeat(2, 25vw)/repeat(4, 25%);
 }
 
-
-
-#section-5 > .paper
+#section-5 > .paper1,#section-5 > .paper2,#section-5 > .paper3,#section-5 > .paper4
 {
     height: 100%;
     width: 100%;
-    grid-area: paper;
     background-image: url("2S1QgsahUuy5fE7Dx4bWg2FL1B-Ww6T_gQrOyBRuU1d-2FAw6FY8hc5sy0KbvF_8V_PwHISkWsw3SIpPV9UTYpr0.jpg");
     background-size: cover;
+    transition: 2s;
 }
 
-#section-5 > .laptop
+
+#section-5 > .laptop1,#section-5 > .laptop2,#section-5 > .laptop3,#section-5 > .laptop4
 {
     height: 100%;
     width: 100%;
-    grid-area: laptop;
     background-image: url("uYiuzs3IvVP-GM2XjwBaQYpNPKWAcvoKrOxMgJ1b7FFqZNXv4MGAr0dvE79JKCLaxCZjM-dpYdBLagozmrvJg7mP.jpg");
     background-size: cover;
+    transition: 2s;
 }
 
 @media all and (orientation:portrait)
@@ -468,25 +466,93 @@ section
     {
         height: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(4, 50vw);
-        grid-template-areas: "paper laptop"
-        "laptop paper"
-        "paper laptop"
-        "laptop paper";
+        grid-template: repeat(4, 50vw)/repeat(2, 50%);
+        
     }
 
-    #section-5 > .paper
+    #section-5 > .paper1,#section-5 > .paper2,#section-5 > .paper3,#section-5 > .paper4
     {
         width: 100%;
         height: 100%;
     }
 
-    #section-5 > .laptop
+    #section-5 > .paper1
+    {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #section-5 > .paper2
+    {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    #section-5 > .paper3
+    {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    #section-5 > .paper4
+    {
+        grid-row: 4;
+        grid-column: 2;
+    }
+
+    #section-5 > .laptop1,#section-5 > .laptop2,#section-5 > .laptop3,#section-5 > .laptop4
     {
         width: 100%;
         height: 100%;
     }
+
+    #section-5 > .laptop1
+    {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #section-5 > .laptop2
+    {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #section-5 > .laptop3
+    {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    #section-5 > .laptop4
+    {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+}
+
+#section-5 > div > div
+{
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 84, 122, 0.8);
+    opacity: 0;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-5 > div > div > img
+{
+    width: 30%;
+    height: 30%;
+}
+
+#section-5 > div:hover > div
+{
+    opacity: 1;
 }
 
 /* section-6 */
@@ -494,13 +560,186 @@ section
 #section-6
 {
     height: 20vh;
-    background: rgb(229, 229, 229);
+    background: rgb(238, 239, 241);
+    display: grid;
+    grid-template-columns: repeat(4, 25vmin);
+    grid-template-rows: 12vmin;
+    gap: 1.5vw;
+    align-content: center;
+}
+
+#section-6 > img
+{
+    width: 25vmin;
+    height: 12vmin;
+}
+
+@media all and (orientation:portrait)
+{
+    #section-6
+    {
+        grid-template-columns: repeat(2, 25vmin);
+        grid-template-rows: repeat(2, 12vmin);
+        justify-content: center;
+        gap: 6vw;
+    }
 }
 
 /* section-7 */
 
 #section-7
 {
-    height: 50vh;
-    background: rgb(238, 239, 241);
+    height: 80vh;
+    background: rgb(229, 229, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+#section-7 > p
+{
+    width: 35vw;
+    text-align: center;
+    margin: 3vmin 0;
+}
+
+#section-7 > div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 35vw;
+}
+
+.name,.email
+{
+    width: 15vw;
+    height: 5vmin;
+    margin: 3vmin 0;
+    padding-left: 1vw;
+}
+
+.message
+{
+    width: 35vw;
+    height: 20vmin;
+    margin-bottom: 6vmin;
+    padding-left: 1vw;
+    padding-bottom: 14vmin;
+}
+
+#section-7 > button
+{
+    background: rgb(52, 84, 122);
+    width: 15vmin;
+    height: 5vmin;
+    color: white;
+    border: 0 solid rgba(0,0,0,0);
+}
+
+@media all and (orientation:portrait)
+{
+    #section-7
+    {
+        height: 40vh;
+    }
+
+    #section-7 > p
+    {
+        width: 50vw;
+        text-align: center;
+        margin: 3vmin 0;
+    }
+
+    #section-7 > div
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 70vw;
+    }
+
+    .name,.email
+    {
+        width: 30vw;
+        height: 7vmin;
+        margin: 3vmin 0;
+    }
+
+    .message
+    {
+        width: 70vw;
+        height: 40vmin;
+        margin-bottom: 6vmin;
+    }
+
+    #section-7 > button
+    {
+        width: 20vw;
+        height: 7vmin;
+    }
+}
+
+/* footer */
+
+footer
+{
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(52, 84, 122);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer > div
+{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > div > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer > div > div > p
+{
+    margin-top: 1vmin;
+    font-size: 1.5vmin
+}
+
+.vkrow
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > div > div > img
+{
+    width: 5vmin;
+    height: 5vmin;
+    margin: 0 1.5vmin;
+}
+
+@media all and (orientation:portrait)
+{
+    footer
+    {
+        height: 6vh;
+    }
+}
+
