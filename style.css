@@ -628,7 +628,22 @@ section
 {
     #section-7
     {
-        height: 40vh;
+        height: 70vh;
+    }
+
+    #section-6
+    {
+        height: 25vh;
+    }
+
+    #section-4
+    {
+        height: 60vh;
+    }
+
+    #section-3
+    {
+        height: 66vh;
     }
 
     #section-7 > p
@@ -659,6 +674,52 @@ section
         width: 70vw;
         height: 40vmin;
         margin-bottom: 6vmin;
+        padding-bottom: 35vmin;
+    }
+
+    #section-7 > button
+    {
+        width: 20vw;
+        height: 7vmin;
+    }
+}
+
+@media all and (orientation:portrait) and ((not(width: 375px)) or (not(width: 820px)) or (not(width: 768px)))
+{
+    #section-7
+    {
+        height: 45vh;
+    }
+
+    #section-7 > p
+    {
+        width: 50vw;
+        text-align: center;
+        margin: 3vmin 0;
+    }
+
+    #section-7 > div
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 70vw;
+    }
+
+    .name,.email
+    {
+        width: 30vw;
+        height: 7vmin;
+        margin: 3vmin 0;
+    }
+
+    .message
+    {
+        width: 70vw;
+        height: 40vmin;
+        margin-bottom: 6vmin;
+        padding-bottom: 35vmin;
     }
 
     #section-7 > button
